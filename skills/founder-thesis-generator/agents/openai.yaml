@@ -1,0 +1,4 @@
+interface:
+  display_name: "Founder Thesis Generator"
+  short_description: "Find the right startup thesis"
+  default_prompt: "Use $founder-thesis-generator to decide which startup this person should build and how to validate it from their detailed Markdown profile."

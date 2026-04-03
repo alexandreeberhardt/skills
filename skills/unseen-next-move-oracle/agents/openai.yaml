@@ -1,0 +1,4 @@
+interface:
+  display_name: "Unseen Next Move Oracle"
+  short_description: "Reveal the hidden next move"
+  default_prompt: "Use $unseen-next-move-oracle to identify the highest-leverage next move hidden in this person's detailed Markdown profile."

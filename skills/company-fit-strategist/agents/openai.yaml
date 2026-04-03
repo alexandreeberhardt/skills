@@ -1,0 +1,4 @@
+interface:
+  display_name: "Company Fit Strategist"
+  short_description: "Find the best company fit"
+  default_prompt: "Use $company-fit-strategist to determine which company, company type, or independent path best fits this person from their detailed Markdown profile."
