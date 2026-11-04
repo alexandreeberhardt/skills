@@ -13,6 +13,7 @@ They can work with Codex or Claude Code
 - `minimalist-skill` — premium editorial minimalism with warm monochrome palettes, flat layouts, and strong typography.
 - `output-skill` — enforces complete, unabridged outputs and bans placeholder truncation patterns.
 - `redesign-skill` — audits and upgrades existing app/site UI without breaking the current stack.
+- `slides` — builds or extends Google Slides decks in a clean, airy style with native charts and LaTeX equations.
 - `soft-skill` — high-end agency-style visual design guidance for polished UI, spacing, motion, and component treatment.
 - `spotify` — queues tracks on the active Spotify device using cached local OAuth credentials.
 - `stitch-skill` — generates strict `DESIGN.md` design-system instructions for Google Stitch.
