@@ -19,6 +19,7 @@ They can work with Codex or Claude Code
 - `stitch-skill` — generates strict `DESIGN.md` design-system instructions for Google Stitch.
 - `taste-skill` — high-agency frontend design rules to override generic LLM UI defaults.
 - `unseen-next-move-oracle` — identifies a high-leverage next move and hidden blind spots from a detailed profile.
+- `variantes` — generates 10 profile-photo variants (face-centered crop, retouch, background removal, studio backgrounds, lighting, B&W) with macOS Vision and ImageMagick.
 
 ## Layout
 
@@ -30,3 +31,4 @@ Some skills also include supporting folders such as `agents/` or `scripts/`.
 - Spotify local secrets/tokens are intentionally not committed, you need spotify credentials to interact with your account.
 - User-specific Spotify listening history paths and taste exclusions should stay out of tracked skill files.
 - Python cache files are intentionally omitted.
+- `variantes` compiled Vision helpers (`bin/`) are not committed, `variantes.sh` rebuilds them with `swiftc` on first run.
