@@ -12,6 +12,7 @@ They can work with Codex or Claude Code
 - `humanizer` — rewrites text to remove common AI-writing patterns and sound more natural.
 - `minimalist-skill` — premium editorial minimalism with warm monochrome palettes, flat layouts, and strong typography.
 - `output-skill` — enforces complete, unabridged outputs and bans placeholder truncation patterns.
+- `plan-strategique` — builds or updates a strategic plan in 7 steps (Arthur Perticoz's method): start from the goal, work back to milestones, detail each jump, review, redo the plan. Written in French.
 - `redesign-skill` — audits and upgrades existing app/site UI without breaking the current stack.
 - `slides` — builds or extends Google Slides decks in a clean, airy style with native charts and LaTeX equations.
 - `soft-skill` — high-end agency-style visual design guidance for polished UI, spacing, motion, and component treatment.
