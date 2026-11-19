@@ -7,6 +7,7 @@ They can work with Codex or Claude Code
 
 - `brutalist-skill` — industrial/brutalist UI direction for dense, tactical, print-inspired interfaces.
 - `clean-code` — removes decorative separators, alignment-only spacing, and non-ASCII symbols from code without changing logic.
+- `clean-readme` — creates, reworks or updates a repository README and its companion files (roadmap, research results) with fixed rules per project type, and a script that checks the result.
 - `company-fit-strategist` — infers the best company type, role, or independent path from a detailed profile.
 - `founder-thesis-generator` — derives a startup thesis, wedge, customer, GTM, and validation plan from a founder profile.
 - `humanizer` — rewrites text to remove common AI-writing patterns and sound more natural.
