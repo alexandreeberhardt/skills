@@ -1,6 +1,6 @@
 ---
 name: clean-readme
-description: Creates, reworks or updates a repository README and its companion files (ROADMAP.md, RESULTS.md, docs/) following fixed rules - project type (project, tool, research, collection), status block, 200 lines at most, fixed headings, nothing invented, checked by a script. Use when the user calls /clean-readme, asks to write, redo, clean up or update a README (also in French: écrire, refaire, nettoyer ou mettre à jour un README), or gives a piece of information to file in a repository already managed by the skill (new trial, new result, step done, project paused).
+description: Creates, reworks or updates a repository README and its companion files (ROADMAP.md, RESULTS.md, docs/) following fixed rules - project type (project, tool, research, collection), status block, 200 lines at most, fixed headings, nothing invented, checked by a script. Use when the user calls /clean-readme, asks to write, redo, clean up or update a README (also in French: écrire, refaire, nettoyer ou mettre à jour un README), or gives a piece of information to file in a repository whose README already follows these rules (new trial, new result, step done, project paused).
 ---
 
 # clean-readme
@@ -11,7 +11,7 @@ Reference files, to read when they are useful:
 
 - `references/detection.md`: recognizing the type and status of a project;
 - `references/structure.md`: README sections per type, ROADMAP.md, RESULTS.md, going over 200 lines, mappings for a rework;
-- `references/titles.md`: exact headings in English and French, statuses, status block, header comment, anchors;
+- `references/titles.md`: exact headings in English and French, statuses, status block, anchors;
 - `templates/`: one README template per type, and the ROADMAP.md and RESULTS.md templates;
 - `scripts/check.py`: automatic checks.
 
@@ -29,10 +29,12 @@ Reference files, to read when they are useful:
 | Situation | Mode |
 |---|---|
 | No README | Create |
-| README without a `clean-readme` comment on the first line | Rework |
-| README with that comment | Update |
+| README that does not follow the rules | Rework |
+| README that already follows the rules | Update |
 
-If the user gives a piece of information to file while the README has no comment, only make the requested addition, without restructuring and without adding the comment. Mention in the report that a rework is possible.
+A README follows the rules when it has the status block in the format of `references/titles.md`, its level 2 headings come from the tables of that file, and `scripts/check.py` reports no error. The skill leaves no marker in the README: the type and language are detected again on each run.
+
+If the user gives a piece of information to file while the README does not follow the rules, only make the requested addition, without restructuring. Mention in the report that a rework is possible.
 
 ## Reading the repository
 
@@ -87,7 +89,7 @@ At the end, a short message that gives:
 
 ## Update mode
 
-Read the type, language and rules version from the header comment. If `v` is lower than 2, suggest a rework. Otherwise, file the information without asking for a plan first:
+Detect the type from the README headings and the language from its status block (`references/detection.md`), then file the information without asking for a plan first:
 
 | Information received | Where it goes |
 |---|---|
@@ -95,7 +97,7 @@ Read the type, language and rules version from the header comment. If `v` is low
 | New consolidated result | RESULTS.md, new `### Rn` section, and a line in the README's Key results if it is important |
 | Step finished or started | ROADMAP.md, then the README's progress summary |
 | Status change | README status block |
-| Project that changed nature (proof of concept that became stable) | Suggest the new type. Once accepted, restructure and update the comment |
+| Project that changed nature (proof of concept that became stable) | Suggest the new type. Once accepted, restructure |
 | New feature or command | Matching README section |
 
 Still run all the checks. If the README was edited by hand and no longer follows the rules, fix the formatting issues reported by the script and list them in the report. End with the report of the changes.
@@ -121,7 +123,7 @@ At most 5 documentation files created by the skill, README included:
 
 ### Language
 
-In this order: language requested by the user, language of the header comment, language of the existing README, language the user writes in. All repository files in the same language. Headings, statuses and file names come from the tables in `references/titles.md`.
+In this order: language requested by the user, language of the existing README, language the user writes in. All repository files in the same language. Headings, statuses and file names come from the tables in `references/titles.md`.
 
 ### Style
 
@@ -139,7 +141,7 @@ In this order: language requested by the user, language of the header comment, l
 
 ### Emojis
 
-Forbidden in the README and RESULTS.md. In ROADMAP.md, only ⬜, 🟡 and ✅.
+Forbidden in all files produced by the skill, ROADMAP.md included: statuses are written in text.
 
 ### Markdown form
 
@@ -149,7 +151,7 @@ Forbidden in the README and RESULTS.md. In ROADMAP.md, only ⬜, 🟡 and ✅.
 - Images with alt text, relative paths.
 - Relative links for repository files.
 - No badges. No layout HTML. `<details>` and a sized `<img>` tolerated if needed.
-- No mention of AI or assistants, nor of generated content.
+- No statement that the content was generated or co-written by AI. Mentions of AI tools as the subject of the project are fine.
 
 ### Reliability
 
@@ -180,7 +182,7 @@ python3 scripts/check.py <repository-path>
 - `WARNING`: point to judge. Fix it, or justify it in the report (word "simple" in the literal sense, target to commit, real output copied).
 - Run again until there are zero errors.
 
-The script checks length, characters, emojis, headings and their order, the table of contents, the status block, the header comment, links, anchors, images, code blocks, badges, HTML and personal data patterns.
+The script checks length, characters, emojis, headings and their order, the table of contents, the status block, links, anchors, images, code blocks, badges, HTML and personal data patterns.
 
 The skill checks by itself what the script cannot judge:
 
@@ -197,5 +199,6 @@ The skill checks by itself what the script cannot judge:
 - It does not modify the project's code.
 - It does not run the project's commands, unless asked: it only checks that they exist.
 - It does not manage `CHANGELOG.md`, nor READMEs in several languages (`README.fr.md`).
+- It does not add any marker or comment of its own to the files it writes.
 - It does not create a `LICENSE` file and does not suggest a license. The License section only exists if the repository already has a license file.
 - It does not write a Credits section: the user decides to add it. It keeps an existing one.

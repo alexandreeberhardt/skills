@@ -1,4 +1,3 @@
-<!-- clean-readme: type=research; lang=en; v=2 -->
 # <Readable project name>
 
 <The research goal and the progress in short, in 2 to 4 sentences.>

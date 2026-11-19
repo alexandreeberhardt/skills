@@ -2,22 +2,6 @@
 
 Exact texts to use. Level 2 headings of the README are taken only from these tables, except for at most 2 free sections. Level 3 headings are free, except those listed here.
 
-## README header comment
-
-First line of the README, always in ASCII and in English, whatever the README language:
-
-```markdown
-<!-- clean-readme: type=research; lang=en; v=2 -->
-```
-
-| Key | Values | Role |
-|---|---|---|
-| `type` | `project`, `tool`, `research`, `collection` | Chosen type |
-| `lang` | `en`, `fr` | Language of all repository files |
-| `v` | integer, currently `2` | Rules version. Older than the skill's: suggest a rework |
-
-The script also reads the French form of the comment (`type=realisation|outil|recherche|recueil; langue=fr`), so READMEs written with the French version of the skill keep working.
-
 ## Status block
 
 A blockquote, right after the description.
@@ -52,7 +36,7 @@ In French:
 | Stopped | Arrêté | Abandoned or not completed | The reason, and where the project stopped |
 | Done | Terminé | Finished and working | None |
 
-In a README progress table, the Status column uses text: Done, In progress, To do (Fait, En cours, À faire).
+In a README progress table and in ROADMAP.md, the Status column uses text: Done, In progress, To do (Fait, En cours, À faire).
 
 ## README: common headings
 
@@ -102,7 +86,7 @@ In a README progress table, the Status column uses text: Done, In progress, To d
 
 | File (en / fr) | Level 1 (en / fr) | Level 2 (en / fr) |
 |---|---|---|
-| `ROADMAP.md` / `ROADMAP.md` | Roadmap / Feuille de route | Legend / Légende |
+| `ROADMAP.md` / `ROADMAP.md` | Roadmap / Feuille de route | None: a single table |
 | `RESULTS.md` / `RESULTATS.md` | Research results / Résultats de recherche | Contents / Sommaire, Summary / Résumé, Method / Méthode, Results / Résultats, Trials / Essais, Discarded leads / Pistes écartées, Open questions / Questions ouvertes |
 | `docs/GUIDE.md` / `docs/GUIDE.md` | Guide / Guide | Headings taken from the README: Installation, Configuration and options, Hardware |
 | `docs/HOW-IT-WORKS.md` / `docs/FONCTIONNEMENT.md` | How it works / Fonctionnement interne | Free |

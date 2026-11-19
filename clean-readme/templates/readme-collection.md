@@ -1,4 +1,3 @@
-<!-- clean-readme: type=collection; lang=en; v=2 -->
 # <Readable collection name>
 
 <What the repository contains, in what setting, and for whom, in 2 to 4 sentences.>

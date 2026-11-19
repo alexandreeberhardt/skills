@@ -1,4 +1,3 @@
-<!-- clean-readme: type=tool; lang=en; v=2 -->
 # <Readable tool name>
 
 <What the tool does, for whom, and what sets it apart, in 2 to 4 sentences.>

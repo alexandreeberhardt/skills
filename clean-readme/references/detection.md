@@ -15,9 +15,9 @@ The skill chooses the type and status from the clues, and states them in the rep
 
 Stop as soon as a source is enough:
 
-1. the `clean-readme` comment at the top of the README: the type is already known;
-2. what the user says ("it's a POC", "it's my library");
-3. the existing README and docs: vocabulary, sections present;
+1. what the user says ("it's a POC", "it's my library");
+2. the existing README: if it already follows the rules, its level 2 headings give the type (Quick start: Tool, Key results: Research, Index: Collection, Build and run: Project) and its status block gives the language (`**Status**` or `**État**`);
+3. the existing README and docs otherwise: vocabulary, sections present;
 4. the repository structure, configuration files and git history.
 
 ## Tie-breaking question

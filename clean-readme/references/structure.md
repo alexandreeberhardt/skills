@@ -4,14 +4,13 @@ The exact headings and their translation are in `titles.md`. A section with no r
 
 ## Common beginning (all types)
 
-1. `clean-readme` comment on the first line.
-2. Level 1 heading: readable project name. If it is not obvious, start from the repository name and make it readable.
-3. Description: 2 to 4 sentences. What the project is, what it is made with, what it is for. For research: the goal and the progress in short.
-4. Status block (format in `titles.md`).
-5. Disclaimer: optional, for a security or reverse engineering project, or one that touches a commercial product. Educational use, no affiliation with the brand studied, possible risks. Two or three sentences.
-6. Contents: links to level 2 headings, only if there are at least 5 other level 2 sections.
-7. Context: only if the project needs framing (setting, motivation, constraints).
-8. Differences from upstream: only for a fork.
+1. Level 1 heading: readable project name. If it is not obvious, start from the repository name and make it readable.
+2. Description: 2 to 4 sentences. What the project is, what it is made with, what it is for. For research: the goal and the progress in short.
+3. Status block (format in `titles.md`).
+4. Disclaimer: optional, for a security or reverse engineering project, or one that touches a commercial product. Educational use, no affiliation with the brand studied, possible risks. Two or three sentences.
+5. Contents: links to level 2 headings, only if there are at least 5 other level 2 sections.
+6. Context: only if the project needs framing (setting, motivation, constraints).
+7. Differences from upstream: only for a fork.
 
 ## Body by type
 
@@ -84,9 +83,8 @@ Makefile         # build
 
 ## ROADMAP.md
 
-- Level 1 heading, then `## Legend` with the three emojis: ⬜ to do, 🟡 in progress, ✅ done. No other emoji.
-- A single large table, columns: Phase, Step, Description, Status.
-- The Status cell contains only the emoji.
+- Level 1 heading, then a single large table, columns: Phase, Step, Description, Status.
+- The Status cell contains only the status in text: Done, In progress, To do. No emoji.
 - Each step is a verifiable action, not a vague theme.
 - The README keeps only a progress summary and a link.
 

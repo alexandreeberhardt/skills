@@ -1,4 +1,3 @@
-<!-- clean-readme: type=project; lang=en; v=2 -->
 # <Readable project name>
 
 <What the project is, what it is made with and what it is for, in 2 to 4 sentences.>
