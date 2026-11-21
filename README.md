@@ -6,11 +6,12 @@ Each skill is a folder centered on a `SKILL.md` file.
 ## Repository layout
 
 ```text
-<skill-name>/                  # standalone skill
-    SKILL.md                   # instructions read by the agent
-    scripts/                   # helper scripts, for some skills
-designSkills/<skill-name>/     # UI design skills
-startupSkills/<skill-name>/    # startup and career skills
+<skill-name>/                   # standalone skill
+    SKILL.md                    # instructions read by the agent
+    scripts/                    # helper scripts, for some skills
+designSkills/<skill-name>/      # UI design skills
+startupSkills/<skill-name>/     # startup and career skills
+readabilitySkills/<skill-name>/ # readability of AI-generated text
 ```
 
 ## Index
@@ -29,6 +30,9 @@ startupSkills/<skill-name>/    # startup and career skills
 | [company-fit-strategist](startupSkills/company-fit-strategist/) | Startup | From a detailed profile, suggests the kind of company, role or independent path that fits best |
 | [founder-thesis-generator](startupSkills/founder-thesis-generator/) | Startup | From a founder profile, suggests a startup to found: thesis, first customer, go-to-market, validation plan |
 | [unseen-next-move-oracle](startupSkills/unseen-next-move-oracle/) | Startup | From a detailed profile, points out a next move and blind spots the person has missed |
+| [linguistic-linter](readabilitySkills/linguistic-linter/) | Readability | Flags the constructions that make LLM text hard to read (stacked nouns, personified code, reduced relatives...) and compares versions of a text, with a spaCy script. Based on Clark, Martin & Mahowald (2026) |
+| [clarity-rewriter](readabilitySkills/clarity-rewriter/) | Readability | Rewrites a text so it reads right the first time, at the reader's level and length, then checks no information was lost |
+| [agent-output-editor](readabilitySkills/agent-output-editor/) | Readability | Turns agent output (session reports, logs, bug sweeps) into a plain-language report, or writes a recap of a long session |
 | [plan-strategique](plan-strategique/) | Planning | Builds or updates a strategic plan in 7 steps (Arthur Perticoz's method). Written in French |
 | [clean-readme](clean-readme/) | Writing | Creates, reworks or updates a README and its companion files, with a script that checks the result |
 | [humanizer](humanizer/) | Writing | Rewrites text to remove common signs of AI writing, based on Wikipedia's guide |
@@ -39,6 +43,7 @@ startupSkills/<skill-name>/    # startup and career skills
 ## Tools
 
 - Codex or Claude Code
-- Python 3, for the scripts of `clean-readme`, `slides` and `spotify`
+- Python 3, for the scripts of `clean-readme`, `slides`, `spotify` and `linguistic-linter`
+- spaCy with an English model, for `linguistic-linter` on English text: `pip install spacy && python -m spacy download en_core_web_sm` (`en_core_web_trf` is more accurate)
 - Your own Spotify credentials, for `spotify`: secrets and tokens are not committed
 - macOS with `swiftc` and ImageMagick, for `variantes`: its Vision helpers are compiled on first run
