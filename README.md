@@ -1,36 +1,44 @@
-# Useful Skills
+# Skills
 
-This repository stores the custom Agentic AI skills that I use.
-They can work with Codex or Claude Code
+This repository stores the custom agent skills I use with Codex or Claude Code.
+Each skill is a folder centered on a `SKILL.md` file.
 
-## Included skills
+## Repository layout
 
-- `brutalist-skill` — industrial/brutalist UI direction for dense, tactical, print-inspired interfaces.
-- `clean-code` — removes decorative separators, alignment-only spacing, and non-ASCII symbols from code without changing logic.
-- `clean-readme` — creates, reworks or updates a repository README and its companion files (roadmap, research results) with fixed rules per project type, and a script that checks the result.
-- `company-fit-strategist` — infers the best company type, role, or independent path from a detailed profile.
-- `founder-thesis-generator` — derives a startup thesis, wedge, customer, GTM, and validation plan from a founder profile.
-- `humanizer` — rewrites text to remove common AI-writing patterns and sound more natural.
-- `minimalist-skill` — premium editorial minimalism with warm monochrome palettes, flat layouts, and strong typography.
-- `output-skill` — enforces complete, unabridged outputs and bans placeholder truncation patterns.
-- `plan-strategique` — builds or updates a strategic plan in 7 steps (Arthur Perticoz's method): start from the goal, work back to milestones, detail each jump, review, redo the plan. Written in French.
-- `redesign-skill` — audits and upgrades existing app/site UI without breaking the current stack.
-- `slides` — builds or extends Google Slides decks in a clean, airy style with native charts and LaTeX equations.
-- `soft-skill` — high-end agency-style visual design guidance for polished UI, spacing, motion, and component treatment.
-- `spotify` — queues tracks on the active Spotify device using cached local OAuth credentials.
-- `stitch-skill` — generates strict `DESIGN.md` design-system instructions for Google Stitch.
-- `taste-skill` — high-agency frontend design rules to override generic LLM UI defaults.
-- `unseen-next-move-oracle` — identifies a high-leverage next move and hidden blind spots from a detailed profile.
-- `variantes` — generates 10 profile-photo variants (face-centered crop, retouch, background removal, studio backgrounds, lighting, B&W) with macOS Vision and ImageMagick.
+```text
+<skill-name>/                  # standalone skill
+    SKILL.md                   # instructions read by the agent
+    scripts/                   # helper scripts, for some skills
+designSkills/<skill-name>/     # UI design skills
+startupSkills/<skill-name>/    # startup and career skills
+```
 
-## Layout
+## Index
 
-Each skill lives in `skills/<skill-name>/` and is centered around a `SKILL.md` file.
-Some skills also include supporting folders such as `agents/` or `scripts/`.
+| Entry | Theme | Description |
+|---|---|---|
+| [brutalist-skill](designSkills/brutalist-skill/) | Design | UI rules for a Swiss-print, terminal-like look: rigid grids, strong type contrast, utilitarian colors |
+| [good-design](designSkills/good-design/) | Design | Reviews or designs anything with 14 concrete tests from Paul Graham's "Taste for Makers". Written in French |
+| [minimalist-skill](designSkills/minimalist-skill/) | Design | UI rules for an editorial look: warm monochrome palette, flat layouts, no gradients or heavy shadows |
+| [redesign-skill](designSkills/redesign-skill/) | Design | Audits an existing site or app and improves its UI without changing the stack |
+| [soft-skill](designSkills/soft-skill/) | Design | UI rules for a polished agency look: fonts, spacing, shadows, cards and animations |
+| [stitch-skill](designSkills/stitch-skill/) | Design | Writes a `DESIGN.md` design system for Google Stitch |
+| [taste-skill](designSkills/taste-skill/) | Design | Frontend rules to avoid the generic look of AI-generated interfaces |
+| [output-skill](designSkills/output-skill/) | Code | Stops the agent from truncating code or leaving placeholders |
+| [clean-code](clean-code/) | Code | Removes decorative separators, alignment-only spacing and non-ASCII symbols without changing logic |
+| [company-fit-strategist](startupSkills/company-fit-strategist/) | Startup | From a detailed profile, suggests the kind of company, role or independent path that fits best |
+| [founder-thesis-generator](startupSkills/founder-thesis-generator/) | Startup | From a founder profile, suggests a startup to found: thesis, first customer, go-to-market, validation plan |
+| [unseen-next-move-oracle](startupSkills/unseen-next-move-oracle/) | Startup | From a detailed profile, points out a next move and blind spots the person has missed |
+| [plan-strategique](plan-strategique/) | Planning | Builds or updates a strategic plan in 7 steps (Arthur Perticoz's method). Written in French |
+| [clean-readme](clean-readme/) | Writing | Creates, reworks or updates a README and its companion files, with a script that checks the result |
+| [humanizer](humanizer/) | Writing | Rewrites text to remove common signs of AI writing, based on Wikipedia's guide |
+| [slides](slides/) | Media | Builds or extends Google Slides decks with native charts and LaTeX equations |
+| [spotify](spotify/) | Media | Queues tracks on the active Spotify device |
+| [variantes](variantes/) | Media | Generates 10 profile-photo variants: crop, retouch, background removal, studio backgrounds, lighting |
 
-## Notes
+## Tools
 
-- Spotify local secrets/tokens are intentionally not committed, you need spotify credentials to interact with your account.
-- User-specific Spotify listening history paths and taste exclusions should stay out of tracked skill files.
-- Python cache files are intentionally omitted.
-- `variantes` compiled Vision helpers (`bin/`) are not committed, `variantes.sh` rebuilds them with `swiftc` on first run.
+- Codex or Claude Code
+- Python 3, for the scripts of `clean-readme`, `slides` and `spotify`
+- Your own Spotify credentials, for `spotify`: secrets and tokens are not committed
+- macOS with `swiftc` and ImageMagick, for `variantes`: its Vision helpers are compiled on first run
